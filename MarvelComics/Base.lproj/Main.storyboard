@@ -27,7 +27,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xgu-jI-XcC">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ComicCollectionViewCell" id="xgu-jI-XcC" customClass="ComicCollectionViewCell" customModule="MarvelComics" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="187" height="187"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="my7-fh-N4x">
@@ -46,8 +46,15 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="187" height="187"/>
+                                        <connections>
+                                            <outlet property="comicImageView" destination="hUx-I8-1Cb" id="lgk-eu-ncx"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="TMI-uw-MhB" id="NS2-Io-phU"/>
+                                    <outlet property="delegate" destination="TMI-uw-MhB" id="IWA-nT-Epp"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KHd-o2-09I"/>

@@ -13,6 +13,7 @@
 		F58EF78D27E9213F007D2E81 /* MarvelComics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F58EF78B27E9213F007D2E81 /* MarvelComics.xcdatamodeld */; };
 		F58EF78F27E92140007D2E81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F58EF78E27E92140007D2E81 /* Assets.xcassets */; };
 		F58EF79227E92140007D2E81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F58EF79027E92140007D2E81 /* LaunchScreen.storyboard */; };
+		F58EF79C27E92A62007D2E81 /* ComicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58EF79B27E92A62007D2E81 /* ComicCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F58EF78E27E92140007D2E81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F58EF79127E92140007D2E81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F58EF79327E92140007D2E81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F58EF79B27E92A62007D2E81 /* ComicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		F58EF78127E9213F007D2E81 /* MarvelComics */ = {
 			isa = PBXGroup;
 			children = (
+				F58EF79A27E92A3F007D2E81 /* Cells */,
 				F58EF78227E9213F007D2E81 /* AppDelegate.swift */,
 				F58EF78427E9213F007D2E81 /* SceneDelegate.swift */,
 				F58EF78827E9213F007D2E81 /* Main.storyboard */,
@@ -65,6 +68,14 @@
 				F58EF78B27E9213F007D2E81 /* MarvelComics.xcdatamodeld */,
 			);
 			path = MarvelComics;
+			sourceTree = "<group>";
+		};
+		F58EF79A27E92A3F007D2E81 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F58EF79B27E92A62007D2E81 /* ComicCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 			files = (
 				F58EF78327E9213F007D2E81 /* AppDelegate.swift in Sources */,
 				F58EF78D27E9213F007D2E81 /* MarvelComics.xcdatamodeld in Sources */,
+				F58EF79C27E92A62007D2E81 /* ComicCollectionViewCell.swift in Sources */,
 				F58EF78527E9213F007D2E81 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
