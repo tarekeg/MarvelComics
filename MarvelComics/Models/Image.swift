@@ -11,7 +11,7 @@ import Foundation
 struct Image: Decodable {
     
     let path: String?
-    let ext:String?
+    let ext: String?
     var stringPath: String? {
         if let path = path, let ext = ext {
             return "\(path).\(ext)"
