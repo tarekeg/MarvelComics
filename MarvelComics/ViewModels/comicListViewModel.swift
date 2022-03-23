@@ -8,8 +8,12 @@
 import Foundation
 
 
-struct comicListViewModel {
+struct ComicListViewModel {
     private let comics : [Comic]
+    
+    init(_ comics : [Comic]){
+        self.comics = comics
+    }
     
     var numberOfSection: Int {
         return 1
