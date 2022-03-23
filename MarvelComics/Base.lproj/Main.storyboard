@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AhA-17-X6O">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -9,16 +9,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Comics-->
         <scene sceneID="vBM-sk-U2d">
             <objects>
-                <viewController id="TMI-uw-MhB" sceneMemberID="viewController">
+                <viewController id="TMI-uw-MhB" customClass="ComicsViewController" customModule="MarvelComics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YtI-I6-8g9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vBE-gW-Neo">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="10" y="98" width="394" height="754"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zB0-M6-52A">
                                     <size key="itemSize" width="187" height="187"/>
@@ -34,8 +34,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="187" height="187"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hUx-I8-1Cb">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hUx-I8-1Cb">
                                                     <rect key="frame" x="0.0" y="0.0" width="187" height="187"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="Y2J-iW-svl"/>
+                                                        <constraint firstAttribute="height" constant="187" id="vhB-50-FvE"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -47,7 +51,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="187" height="187"/>
                                         <connections>
-                                            <outlet property="comicImageView" destination="hUx-I8-1Cb" id="lgk-eu-ncx"/>
+                                            <outlet property="comicImageView" destination="hUx-I8-1Cb" id="5Pt-GK-ZaJ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -60,13 +64,16 @@
                         <viewLayoutGuide key="safeArea" id="KHd-o2-09I"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KHd-o2-09I" firstAttribute="trailing" secondItem="vBE-gW-Neo" secondAttribute="trailing" id="EUB-iq-mNj"/>
-                            <constraint firstItem="KHd-o2-09I" firstAttribute="bottom" secondItem="vBE-gW-Neo" secondAttribute="bottom" id="TJx-K2-TrR"/>
-                            <constraint firstItem="vBE-gW-Neo" firstAttribute="top" secondItem="KHd-o2-09I" secondAttribute="top" id="iUL-0P-gnD"/>
-                            <constraint firstItem="vBE-gW-Neo" firstAttribute="leading" secondItem="KHd-o2-09I" secondAttribute="leading" id="rya-dN-htk"/>
+                            <constraint firstItem="KHd-o2-09I" firstAttribute="trailing" secondItem="vBE-gW-Neo" secondAttribute="trailing" constant="10" id="EUB-iq-mNj"/>
+                            <constraint firstItem="KHd-o2-09I" firstAttribute="bottom" secondItem="vBE-gW-Neo" secondAttribute="bottom" constant="10" id="TJx-K2-TrR"/>
+                            <constraint firstItem="vBE-gW-Neo" firstAttribute="top" secondItem="KHd-o2-09I" secondAttribute="top" constant="10" id="iUL-0P-gnD"/>
+                            <constraint firstItem="vBE-gW-Neo" firstAttribute="leading" secondItem="KHd-o2-09I" secondAttribute="leading" constant="10" id="rya-dN-htk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Uab-j3-XKu"/>
+                    <navigationItem key="navigationItem" title="Comics" id="Uab-j3-XKu"/>
+                    <connections>
+                        <outlet property="collectionView" destination="vBE-gW-Neo" id="fmm-fj-fzs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5N8-KD-wmF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

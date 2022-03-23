@@ -5,4 +5,10 @@
 //  Created by Tarek El Ghoul on 21/03/2022.
 //
 
-import Foundation
+import UIKit
+
+class ComicCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var comicImageView: UIImageView!
+    
+}
