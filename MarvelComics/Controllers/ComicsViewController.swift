@@ -35,9 +35,7 @@ class ComicsViewController: UIViewController {
         
         Webservices().getComics(url: url) { comicData in
             if let comicsFromApi = comicData?.data?.results {
-                
                 self.comics.append(contentsOf: comicsFromApi)
-                print("*** count comics = ",self.comics.count)
                 self.comicListVM = ComicListViewModel(self.comics)
             }
             DispatchQueue.main.async {
@@ -48,10 +46,6 @@ class ComicsViewController: UIViewController {
         
     }
     
-    @IBAction func loadMoreTapped(_ sender: Any) {
-        page += 1
-        getData(at: page)
-    }
     
     
 }
@@ -104,6 +98,24 @@ extension ComicsViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: size, height: size)
     }
     
+}
+
+extension ComicsViewController: UIScrollViewDelegate {
+func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    let height = scrollView.frame.height
+    let contentSizeHeight = scrollView.contentSize.height
+    let offset = scrollView.contentOffset.y
+    let reachedBottom = (offset + height == contentSizeHeight)
+
+    if reachedBottom {
+        scrollViewDidReachBottom(scrollView)
+    }
+}
+
+func scrollViewDidReachBottom(_ scrollView: UIScrollView) {
+    page += 1
+    getData(at: page)
+}
 }
 
 

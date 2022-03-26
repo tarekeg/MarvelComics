@@ -61,13 +61,7 @@
                             <constraint firstItem="vBE-gW-Neo" firstAttribute="leading" secondItem="KHd-o2-09I" secondAttribute="leading" constant="5" id="rya-dN-htk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Comics" id="Uab-j3-XKu">
-                        <barButtonItem key="rightBarButtonItem" title="load" id="p2n-wa-LLj">
-                            <connections>
-                                <action selector="loadMoreTapped:" destination="TMI-uw-MhB" id="QeX-BQ-Y7F"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Comics" id="Uab-j3-XKu"/>
                     <connections>
                         <outlet property="collectionView" destination="vBE-gW-Neo" id="fmm-fj-fzs"/>
                     </connections>

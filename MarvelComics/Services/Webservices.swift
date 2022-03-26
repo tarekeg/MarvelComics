@@ -33,7 +33,7 @@ class Webservices {
             URLQueryItem(name: "apikey", value: CONSTANT.KEY.PUBLICKEY)
         ]
         
-        components?.queryItems = commonQueryItems + pageQueryItems
+        components?.queryItems = commonQueryItems + pageQueryItems 
         
         return (components?.url)!
     }
