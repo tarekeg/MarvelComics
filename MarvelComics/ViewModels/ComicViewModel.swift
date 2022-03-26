@@ -17,14 +17,14 @@ struct ComicViewModel {
     }
     
     var title : String {
-        return self.comic.title
+        return self.comic.title  ?? ""
     }
     
     var description: String {
-        return self.comic.description
+        return self.comic.description ?? ""
     }
     var image: String {
-        if let comicImage = comic.thumbnail.stringPath {
+        if let comicImage = comic.thumbnail?.stringPath {
             return comicImage
         } else {
             return ""

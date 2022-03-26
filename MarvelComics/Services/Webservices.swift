@@ -10,7 +10,9 @@ import Foundation
 
 class Webservices {
     
-    func generateURL() -> URL {
+    private let limit = 20
+    
+    func generateURL(at page: Int) -> URL {
         
         let timestamp = "\(Date().timeIntervalSince1970)"
         let hash = "\(timestamp)\(CONSTANT.KEY.PRIVATEKEY)\(CONSTANT.KEY.PUBLICKEY)".md5()
@@ -18,13 +20,20 @@ class Webservices {
         
         var components = URLComponents(url: baseURL!.appendingPathComponent(CONSTANT.PATH.allComics), resolvingAgainstBaseURL: true)
         
-            let commonQueryItems = [
-                URLQueryItem(name: "ts", value: timestamp),
-                URLQueryItem(name: "hash", value: hash),
-                URLQueryItem(name: "apikey", value: CONSTANT.KEY.PUBLICKEY)
-            ]
-            
-            components?.queryItems = commonQueryItems
+        var pageQueryItems = [URLQueryItem]()
+        
+        if page > 0 {
+            pageQueryItems.append(URLQueryItem(name: "offset", value: "\(page * limit)"))
+        }
+        
+        
+        let commonQueryItems = [
+            URLQueryItem(name: "ts", value: timestamp),
+            URLQueryItem(name: "hash", value: hash),
+            URLQueryItem(name: "apikey", value: CONSTANT.KEY.PUBLICKEY)
+        ]
+        
+        components?.queryItems = commonQueryItems + pageQueryItems
         
         return (components?.url)!
     }

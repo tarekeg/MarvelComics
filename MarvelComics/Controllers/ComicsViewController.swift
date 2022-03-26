@@ -16,6 +16,8 @@ class ComicsViewController: UIViewController {
     
     var comics : [Comic] = []
     
+    var page = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -24,19 +26,33 @@ class ComicsViewController: UIViewController {
     func setup () {
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        getData(at: page)
+    }
+    
+    func getData(at page: Int) {
         
-        let url = Webservices().generateURL()
+        let url = Webservices().generateURL(at: page)
         
         Webservices().getComics(url: url) { comicData in
-            if let comics = comicData?.data?.results {
-                self.comicListVM = ComicListViewModel(comics)
+            if let comicsFromApi = comicData?.data?.results {
+                
+                self.comics.append(contentsOf: comicsFromApi)
+                print("*** count comics = ",self.comics.count)
+                self.comicListVM = ComicListViewModel(self.comics)
             }
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
         }
+
         
     }
+    
+    @IBAction func loadMoreTapped(_ sender: Any) {
+        page += 1
+        getData(at: page)
+    }
+    
     
 }
 
